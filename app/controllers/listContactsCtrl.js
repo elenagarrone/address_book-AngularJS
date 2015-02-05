@@ -12,7 +12,7 @@ addressBookApp.controller('listContactsCtrl', function($scope){
     },
     {
       "first_name": "Nadia",
-      "surname": "Nostra",
+      "surname": "Aostra",
       "address": "No Street",
       "phone_number": "01222312",
       "email": "no@no.com",
@@ -21,4 +21,6 @@ addressBookApp.controller('listContactsCtrl', function($scope){
       "updatedAt": "2015-01-15T15:23:27.000Z"
     }
   ]
+
+  $scope.orderAlphabetically = 'surname'
 })

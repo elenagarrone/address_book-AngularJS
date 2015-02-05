@@ -17,7 +17,7 @@ describe('listContactsCtrl', function(){
     },
     {
       "first_name": "Nadia",
-      "surname": "Nostra",
+      "surname": "Aostra",
       "address": "No Street",
       "phone_number": "01222312",
       "email": "no@no.com",
@@ -29,11 +29,17 @@ describe('listContactsCtrl', function(){
 
   beforeEach(inject(function($rootScope, $controller){
     scope = $rootScope.$new();
-    ctrl = $controller('listContactsCtrl', { $scope:scope })
+    ctrl = $controller('listContactsCtrl', { $scope:scope });
   }));
 
   it('should initialize with a list of contacts', function(){
     expect(scope.contacts).toEqual(contacts);
   });
+
+  it('should set the default alphabetical order on the surname', function(){
+    expect(orderAlphabetically).toBe('surname');
+  });
+
+  it('')
 
 })

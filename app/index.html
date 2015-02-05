@@ -21,6 +21,12 @@
     <input class='form-control searchField' ng-model='searchContact' placeholder='Search for a contact' type='text'>
   </form>
 
+  Order by:
+  <select ng-model='orderAlphabetically'>
+    <option value='first_name'>Name</option>
+    <option value='surname'>Surname</option>
+  </select>
+
   <table class='table table-bordered table-striped'>
     <thead>
       <tr>
@@ -31,7 +37,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat='contact in contacts | filter:searchContact'>
+      <tr ng-repeat='contact in contacts | filter:searchContact | orderBy:orderAlphabetically' >
         <td>{{ contact.surname + " " + contact.first_name | uppercase}}</td>
         <td>{{ contact.address }}</td>
         <td>{{ contact.email }}</td>
