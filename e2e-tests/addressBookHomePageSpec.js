@@ -32,6 +32,12 @@ describe('The homepage', function(){
 
   it('should have a button to add a new contact', function(){
     expect(element(by.className('addContact')).isPresent()).toBe(true);
+    expect(element(by.className('addContact')).getText()).toEqual('Add a new contact');
+  });
+
+  it('by clicking on the "add contact" i should be redirected to another page', function(){
+    element(by.className('addContact')).click();
+    expect(browser.getCurrentUrl()).toEqual('/new')
   });
 
 })
