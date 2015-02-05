@@ -9,4 +9,8 @@ describe('List of contacts', function(){
     expect(contactList.get(1).isPresent()).toBe(true);
   })
 
+  it('should have a search field', function(){
+    expect(element(by.className('searchField')).isPresent()).toBe(true);
+  })
+
 })
