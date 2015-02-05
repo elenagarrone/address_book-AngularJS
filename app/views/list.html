@@ -19,6 +19,7 @@
         <th>Address</th>
         <th>Email</th>
         <th>Phone Number</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -27,6 +28,7 @@
         <td>{{ contact.address }}</td>
         <td>{{ contact.email }}</td>
         <td>{{ contact.phone_number }}</td>
+        <td><button ng-click='deleteContact(contact.id)'class='btn btn-danger delete{{contact.surname+contact.first_name}}'>Delete</button</td>
       </tr>
     </tbody>
   </table>
