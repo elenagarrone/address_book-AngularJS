@@ -1,8 +1,8 @@
-describe('listContactsCtrl', function(){
+describe('listContacts controller', function(){
 
   beforeEach(module('addressBookApp'));
 
-  var scope, ctrl;
+  var scope, ctrl, $httpBackend;
 
   var contacts = [
     {
@@ -27,19 +27,22 @@ describe('listContactsCtrl', function(){
     }
   ]
 
-  beforeEach(inject(function($rootScope, $controller){
+  beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
+    $httpBackend = _$httpBackend_;
+    $httpBackend.expectGET('http://fast-gorge.herokuapp.com/contacts').
+    respond(contacts);
     scope = $rootScope.$new();
-    ctrl = $controller('listContactsCtrl', { $scope:scope });
+    ctrl = $controller('listContactsCtrl', {$scope: scope});
   }));
 
   it('should initialize with a list of contacts', function(){
+    expect(scope.contacts).toBeUndefined();
+    $httpBackend.flush();
     expect(scope.contacts).toEqual(contacts);
   });
 
   it('should set the default alphabetical order on the surname', function(){
-    expect(orderAlphabetically).toBe('surname');
+    expect(scope.orderAlphabetically).toBe('surname');
   });
-
-  it('')
 
 })
