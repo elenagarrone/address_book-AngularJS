@@ -2,9 +2,13 @@ var addressBookApp = angular.module('addressBookApp', ['ngRoute'])
 
 addressBookApp.config(['$routeProvider',
   function($routeProvider) {
-    $routeProvider.
-    when('/', {
+    $routeProvider
+    .when('/', {
       templateUrl: 'views/list.html',
       controller: 'listContactsCtrl'
+    })
+    .when('/new', {
+      templateUrl: 'views/new.html',
+      controller: 'newContactCtrl'
     });
 }]);

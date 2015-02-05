@@ -37,7 +37,13 @@ describe('The homepage', function(){
 
   it('by clicking on the "add contact" i should be redirected to another page', function(){
     element(by.className('addContact')).click();
-    expect(browser.getCurrentUrl()).toEqual('/new')
+    expect(browser.getCurrentUrl()).toContain('/new')
+  });
+
+  it('to add a contact i should be presented with a form', function(){
+    element(by.className('addContact')).click();
+    expect(element(by.tagName('h1')).getText()).toEqual('Add a new contact');
+    expect(element(by.tagName('form')).isPresent()).toBe(true);
   });
 
 })
