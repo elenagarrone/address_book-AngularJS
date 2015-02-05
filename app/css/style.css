@@ -1,0 +1,23 @@
+form {
+  width: 300px;
+  margin: 20px auto;
+}
+
+.dropdown {
+  text-align: right;
+  padding: 0px 15px 0px 15px;
+  margin: 0px 0px 10px 0px;
+}
+
+.dropdown h5 { display: inline-block; }
+
+.dropdown select {
+  background-color: white;
+  border-radius: 2px;
+  padding: 6px 15px 6px 15px;
+  font-family: arial;
+}
+
+.dropdown select:hover {
+  background-color: rgb(249, 249, 249);
+}
