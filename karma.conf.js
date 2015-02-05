@@ -8,7 +8,7 @@ module.exports = function(config){
       'app/bower_components/angular-route/angular-route.js',
       'app/bower_components/angular-mocks/angular-mocks.js',
       'app/js/app.js',
-      'app/controllers/listContactsCtrl.js',
+      'app/js/controllers/listContactsCtrl.js',
       'unit_tests/*.js'
     ],
 
