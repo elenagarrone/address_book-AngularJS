@@ -4,5 +4,6 @@ addressBookApp.controller('listContactsCtrl', ['$scope', '$http',
       $scope.contacts = data;
     });
 
-  $scope.orderAlphabetically = 'surname';
-}]);
+    $scope.orderAlphabetically = 'surname';
+  }
+]);
