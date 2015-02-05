@@ -18,7 +18,7 @@
 <body ng-controller='listContactsCtrl'>
 
   <form>
-    <input class='form-control searchField' placeholder='Search for a contact' type='text'>
+    <input class='form-control searchField' ng-model='searchContact' placeholder='Search for a contact' type='text'>
   </form>
 
   <table class='table table-bordered table-striped'>
@@ -31,7 +31,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat='contact in contacts'>
+      <tr ng-repeat='contact in contacts | filter:searchContact'>
         <td>{{ contact.surname + " " + contact.first_name | uppercase}}</td>
         <td>{{ contact.address }}</td>
         <td>{{ contact.email }}</td>
