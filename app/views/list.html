@@ -1,0 +1,32 @@
+<section ng-controller='listContactsCtrl'>
+  <form>
+    <input class='form-control searchField' ng-model='searchContact' placeholder='Search for a contact' type='text'>
+  </form>
+
+  <section class='dropdown'>
+    <h5>Order by:</h5>
+    <select ng-model='orderAlphabetically'>
+      <option value='first_name'>Name</option>
+      <option value='surname'>Surname</option>
+    </select>
+  </section>
+
+  <table class='table table-bordered table-striped'>
+    <thead>
+      <tr>
+        <th>Surname and Name</th>
+        <th>Address</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat='contact in contacts | filter:searchContact | orderBy:orderAlphabetically' >
+        <td>{{ contact.surname + " " + contact.first_name | uppercase}}</td>
+        <td>{{ contact.address }}</td>
+        <td>{{ contact.email }}</td>
+        <td>{{ contact.phone_number }}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

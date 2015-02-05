@@ -21,3 +21,9 @@ form {
 .dropdown select:hover {
   background-color: rgb(249, 249, 249);
 }
+
+.addContact {
+  position: absolute;
+  top: 20px;
+  right: 1%;
+}
