@@ -29,10 +29,9 @@ describe('listContacts controller', function(){
 
   beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
     $httpBackend = _$httpBackend_;
-    $httpBackend.expectGET('http://fast-gorge.herokuapp.com/contacts').
-    respond(contacts);
+    $httpBackend.expectGET('http://fast-gorge.herokuapp.com/contacts').respond(contacts);
     scope = $rootScope.$new();
-    ctrl = $controller('listContactsCtrl', {$scope: scope});
+    ctrl = $controller('listContactsCtrl', { $scope:scope });
   }));
 
   it('should initialize with a list of contacts', function(){
