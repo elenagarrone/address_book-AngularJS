@@ -16,18 +16,18 @@ describe('The address book', function(){
 
   it('a user should be able to search for a contact', function(){
     element(by.className('searchField')).sendKeys('nadia')
-    expect(contactList.get(1).getText()).toEqual('NOSTRA NADIA No Street no@no.com 01222312 Delete')
+    expect(contactList.get(1).getText()).toEqual('NOSTRA NADIA No Street no@no.com 01222312 Edit Delete')
   });
 
   it('should be presented with the list of contacts ordered alphabetically by surname', function(){
-    expect(contactList.get(1).getText()).toEqual('ARTISTE ALANARAY 123 world and a half alan@art.com 03838 118101 Delete')
-    expect(contactList.get(2).getText()).toEqual('BRUNDY SOLOMON 110 kray road solo@brundy.com 87311337801 Delete')
+    expect(contactList.get(1).getText()).toEqual('ARTISTE ALANARAY 123 world and a half alan@art.com 03838 118101 Edit Delete')
+    expect(contactList.get(2).getText()).toEqual('BRUNDY SOLOMON 110 kray road solo@brundy.com 87311337801 Edit Delete')
   });
 
   it('a user should be able to list the contacts alphabetically by name', function(){
     element(by.model('orderAlphabetically')).element(by.css('option[value="first_name"]')).click();
-    expect(contactList.get(2).getText()).toEqual('GINOLA DAVID Any perrro street ginola@david.com 1981098312 Delete')
-    expect(contactList.get(3).getText()).toEqual('FOLLY FREDDY 273 england fred@folly.com 938289239181 Delete')
+    expect(contactList.get(2).getText()).toEqual('GINOLA DAVID Any perrro street ginola@david.com 1981098312 Edit Delete')
+    expect(contactList.get(3).getText()).toEqual('FOLLY FREDDY 273 england fred@folly.com 938289239181 Edit Delete')
   });
 
   it('should have a button to add a new contact', function(){
@@ -57,6 +57,10 @@ describe('The address book', function(){
     })
   });
 
+  it('should have an edit button available for each contact', function(){
+    expect(element(by.className('editZzzzZzzz')).isPresent()).toBe(true);
+  });
+
   it('should have a delete button available for each contact', function(){
     expect(element(by.className('deleteZzzzZzzz')).isPresent()).toBe(true);
   });
@@ -65,7 +69,7 @@ describe('The address book', function(){
     element(by.className('deleteZzzzZzzz')).click()
     element.all(by.repeater('contact in contacts')).then(function(rows) {
       var lastRow = rows[rows.length -1]
-      expect(lastRow.getText()).not.toMatch('ZZZZ ZZZZ Delete');
+      expect(lastRow.getText()).not.toMatch('ZZZZ ZZZZ Edit Delete');
     })
   });
 
