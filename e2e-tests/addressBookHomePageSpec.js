@@ -99,4 +99,11 @@ describe('The address book', function(){
     })
   });
 
+  it('the forms should check for presence of surname and name', function(){
+    element(by.className('addContact')).click();
+    expect(element(by.id('surnameRequired')).getText()).toEqual('You need to enter your surname.')
+    element(by.id('exampleInputSurname1')).sendKeys('Aaaa')
+    expect(element(by.id('surnameRequired')).isPresent()).toBe(false)
+  });
+
 })
