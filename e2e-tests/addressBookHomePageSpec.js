@@ -10,6 +10,15 @@ describe('The address book', function(){
     expect(contactList.get(2).isPresent()).toBe(true);
   });
 
+  it('should have a title', function(){
+    expect(element(by.id('title')).isPresent()).toBe(true);
+  });
+
+  it('should have the link "AddressBook" redirecting to the homepage', function(){
+    element(by.id('title')).click();
+    expect(browser.getCurrentUrl()).toMatch('http://localhost:8000/app/index.html#/')
+  });
+
   it('should have a search field', function(){
     expect(element(by.className('searchField')).isPresent()).toBe(true);
   });
