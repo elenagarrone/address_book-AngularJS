@@ -1,0 +1,29 @@
+<section class='form_contact' ng-controller='newContactCtrl'>
+
+  <h1>Edit contact</h1>
+
+  <form>
+    <div class="form-group">
+      <label for="exampleInputSurname1">Surname</label>
+      <input ng-model='contact.surname' type="text" class="form-control" id="exampleInputSurname1" placeholder="Enter surname">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputName1">Name</label>
+      <input ng-model='contact.first_name' type="text" class="form-control" id="exampleInputName1" placeholder="Enter name">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputAddress1">Address</label>
+      <input ng-model='contact.address' type="text" class="form-control" id="exampleInputAddress1" placeholder="Enter address">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input ng-model='contact.email' type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPhone1">Phone number</label>
+      <input ng-model='contact.phone_number' type="text" class="form-control" id="exampleInputPhone1" placeholder="Enter phone">
+    </div>
+    <button ng-click='editContact(contact)' class="btn btn-default submit_editContact">Submit</button>
+  </form>
+
+</section>

@@ -29,7 +29,7 @@
         <td>{{ contact.email }}</td>
         <td>{{ contact.phone_number }}</td>
         <td>
-          <button class='btn btn-warning edit{{contact.surname+contact.first_name}}'>Edit</button>
+          <a href='#/edit/{{ contact.id }}' ><button class='btn btn-warning edit{{contact.surname+contact.first_name}}'>Edit</button></a>
           <button ng-click='deleteContact(contact.id)' class='btn btn-danger delete{{contact.surname+contact.first_name}}'>Delete</button>
         </td>
       </tr>

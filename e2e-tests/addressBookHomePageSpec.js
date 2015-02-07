@@ -61,15 +61,26 @@ describe('The address book', function(){
     expect(element(by.className('editZzzzZzzz')).isPresent()).toBe(true);
   });
 
-  it('should have a delete button available for each contact', function(){
-    expect(element(by.className('deleteZzzzZzzz')).isPresent()).toBe(true);
-  });
-
-  it('clicking the delete button you remove the contact', function(){
-    element(by.className('deleteZzzzZzzz')).click()
+  it('should be able to edit a contact', function(){
+    element(by.className('editZzzzZzzz')).click()
+    element(by.id('exampleInputName1')).clear()
+    element(by.id('exampleInputName1')).sendKeys('Aaaa')
+    element(by.className('submit_editContact')).click()
     element.all(by.repeater('contact in contacts')).then(function(rows) {
       var lastRow = rows[rows.length -1]
-      expect(lastRow.getText()).not.toMatch('ZZZZ ZZZZ Edit Delete');
+      expect(lastRow.getText()).toMatch('ZZZZ AAAA Edit Delete');
+    })
+  });
+
+  it('should have a delete button available for each contact', function(){
+    expect(element(by.className('deleteZzzzAaaa')).isPresent()).toBe(true);
+  });
+
+  it('by clicking the delete button you remove the contact', function(){
+    element(by.className('deleteZzzzAaaa')).click()
+    element.all(by.repeater('contact in contacts')).then(function(rows) {
+      var lastRow = rows[rows.length -1]
+      expect(lastRow.getText()).not.toMatch('ZZZZ AAAA Edit Delete');
     })
   });
 

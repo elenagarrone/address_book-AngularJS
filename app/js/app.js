@@ -10,5 +10,9 @@ addressBookApp.config(['$routeProvider',
     .when('/new', {
       templateUrl: 'views/new.html',
       controller: 'newContactCtrl'
+    })
+    .when('/edit/:id', {
+      templateUrl: 'views/edit.html',
+      controller: 'editContactCtrl'
     });
 }]);
