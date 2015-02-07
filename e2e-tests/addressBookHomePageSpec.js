@@ -61,6 +61,12 @@ describe('The address book', function(){
     expect(element(by.className('editZzzzZzzz')).isPresent()).toBe(true);
   });
 
+  it('should have the edit form prefilled', function(){
+    element(by.className('editZzzzZzzz')).click()
+    expect(element(by.id('exampleInputSurname1')).getAttribute('value')).toMatch('Zzzz')
+    expect(element(by.id('exampleInputName1')).getAttribute('value')).toMatch('Zzzz')
+  });
+
   it('should be able to edit a contact', function(){
     element(by.className('editZzzzZzzz')).click()
     element(by.id('exampleInputName1')).clear()
