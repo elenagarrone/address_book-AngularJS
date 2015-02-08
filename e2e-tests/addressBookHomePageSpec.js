@@ -99,11 +99,18 @@ describe('The address book', function(){
     })
   });
 
-  it('the forms should check for presence of surname and name', function(){
+  it('the forms should check for presence of surname', function(){
     element(by.className('addContact')).click();
-    expect(element(by.id('surnameRequired')).getText()).toEqual('You need to enter your surname.')
+    expect(element(by.className('surnameRequired')).getText()).toEqual('You need to enter your surname')
     element(by.id('exampleInputSurname1')).sendKeys('Aaaa')
-    expect(element(by.id('surnameRequired')).isPresent()).toBe(false)
+    expect(element(by.className('surnameRequired')).isPresent()).toBe(false)
+  });
+
+  it('the forms should check for presence of name', function(){
+    element(by.className('addContact')).click();
+    expect(element(by.className('nameRequired')).getText()).toEqual('You need to enter your name')
+    element(by.id('exampleInputName1')).sendKeys('Aaaa')
+    expect(element(by.className('nameRequired')).isPresent()).toBe(false)
   });
 
 })
