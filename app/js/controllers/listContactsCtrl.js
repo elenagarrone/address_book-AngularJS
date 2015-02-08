@@ -7,8 +7,13 @@ addressBookApp.controller('listContactsCtrl', ['$scope', '$http', '$route',
     $scope.orderAlphabetically = 'surname';
 
     $scope.deleteContact = function(id){
-      $http.delete('http://fast-gorge.herokuapp.com/contacts/' + id).success(function(){
+      $http.delete('http://fast-gorge.herokuapp.com/contacts/' + id)
+      .success(function(){
         $route.reload();
+        alert('Contact deleted succesfully')
+      })
+      .error(function(){
+        alert('Something went wrong')
       })
     }
   }
