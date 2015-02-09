@@ -4,10 +4,6 @@ addressBookApp.controller('newContactCtrl', ['$scope', '$http', '$location',
       $http.post('http://fast-gorge.herokuapp.com/contacts', contact)
       .success(function(){
         $location.path('/')
-        alert('Contact added succesfully')
-      })
-      .error(function(){
-        alert('Something went wrong')
       })
     }
   }

@@ -23,7 +23,7 @@ Technologies:
 To do:
 ------
 - fix karma unit tests which are failing because of $route and $location
-- replace alert in request success and error with something better
+- http request success and error should have confirmation messages
 - remove request from controller and put them in a factory
 
 How to use:
