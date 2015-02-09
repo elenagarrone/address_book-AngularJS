@@ -50,7 +50,7 @@ localhost:8000/app
 
 How to test:
 ------------
-Make sur you are running the server (npm start) and then:
+Make sure you are running the server (npm start) and then:
 ```shell
 $ npm test #to run unit tests (currently not working)
 $ npm run protractor #for e2e tests
