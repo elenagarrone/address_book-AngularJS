@@ -1,6 +1,6 @@
-addressBookApp.controller('listContactsCtrl', ['$scope', '$http', '$route',
-  function ($scope, $http, $route) {
-    $http.get('http://fast-gorge.herokuapp.com/contacts').success(function(data){
+addressBookApp.controller('listContactsCtrl', ['$scope', '$http', '$route', 'contactService',
+  function ($scope, $http, $route, contactService) {
+    contactService.getContacts.success(function(data){
       $scope.contacts = data;
     })
 
