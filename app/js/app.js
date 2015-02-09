@@ -1,4 +1,4 @@
-var addressBookApp = angular.module('addressBookApp', ['ngRoute', 'ngMessages', 'contactService'])
+var addressBookApp = angular.module('addressBookApp', ['ngRoute', 'ngMessages'])
 
 addressBookApp.config(['$routeProvider',
   function($routeProvider) {
