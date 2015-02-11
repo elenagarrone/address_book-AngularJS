@@ -3,6 +3,8 @@ Address Book in AngularJS
 This is version 2.0 of a simple single page address book application built using AngularJS. You can find version 1.0 <a href='https://github.com/elenagarrone/address_book-exercises'>here</a>.
 Please keep in mind that it's still a <strong>work in progress</strong>.
 
+<img src='app/css/images/screenshot.png'>
+
 Specification:
 --------------
 Contacts:
